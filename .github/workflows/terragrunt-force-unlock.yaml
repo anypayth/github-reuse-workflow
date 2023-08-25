@@ -36,8 +36,6 @@ on:
     secrets:
       GH_ACTIONS_PRIVATE_KEY:
         required: true
-      GH_PAT:
-        required: true
 
 jobs:
   force-unlock:
@@ -57,9 +55,6 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          submodules: true
-          token: ${{ secrets.GH_PAT }}
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
